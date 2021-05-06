@@ -1,6 +1,4 @@
 :root {
---very_dark_blue: hsl(233, 47%, 7%);
---dark_desaturated_blue: hsl(244, 38%, 16%);
 --soft_violet: hsl(277, 64%, 61%);
 --heading: hsl(0, 0%, 100%);
 --main_p: hsla(0, 0%, 100%, 0.75);
@@ -13,7 +11,7 @@
     padding: 0;
 }
 body{
-    background-color: var(--very_dark_blue);
+    background-color: hsl(233, 47%, 7%);
     color: var(--main_p);
     font-size: 15px;
     font-family: var(--inter);
@@ -31,9 +29,8 @@ body{
 }
 .text{
     width: 50%;
-    background-color: var(--dark_desaturated_blue);
+    background-color: hsl(244, 38%, 16%);
     color: var(--heading);
-    word-break: break-word;
     border-radius: 5px 0 0 5px;
 }
 .info{
@@ -43,13 +40,12 @@ body{
     width: 50%;
     background-image: url(images/image-header-desktop.jpg);
     background-repeat: no-repeat;
-    background-position: right;
+    background-size: cover;
     background-color: var(--soft_violet);
     background-blend-mode: multiply;
     border-radius: 0 5px 5px 0;
 }
 h1{
-    font-weight: 700;
     font-size: 2em;
     padding: 0 0 1em 0;
 }
@@ -59,24 +55,31 @@ span{
 p{
     font-size: 1em;
     font-family: var(--deca);
-    color: var(--main_p);
+    color: var(--stats);
 }
-table{
-    padding: 0 5em 5em;
-    width: 100%;
-}
-tr:nth-child(1){
-    font-size: 1.5em;
-    padding: 1em 0;
-    font-weight: 700;
+.stats{
+    padding: 0 5em 5em 5em;
     text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
 }
-tr:nth-child(2){
+.stat:first-of-type div:first-of-type{
+    text-transform:lowercase;
+}
+.stat{
+    font-size: 1.5em;
+    font-weight: 700;
+}
+.stat div{
     font-size: 0.8em;
     font-family: var(--deca);
-    color: var(--main_p);
+    color: var(--heading);
     padding: .5em 0;
-    text-transform: uppercase;
+}
+.stat div:nth-child(2){
+    font-family: var(--inter);
+    color: var(--stats);
+    font-size: .5em;
 }
 .attribution{
     position: absolute;
@@ -90,13 +93,37 @@ tr:nth-child(2){
 .attribution a{
     color: hsl(228, 45%, 44%);
 }
-@media only screen and (width: 375px){
-    body{
-        /* some code.... */
+@media only screen and (max-width: 375px){
+    #business_card{
+        flex-direction: column-reverse;
     }
-}
-@media only screen and (width: 1440px){
-    body{
-        /* some code.... */
+    .text{
+        width: 100%;
+        border-radius: 0 0 5px 5px;
+    }
+    .info{
+        padding: 1em;
+        text-align: center;
+    }
+    .image{
+        width: 100%;
+        background-position: bottom;
+        background-size: 100% 100%;
+        height: 250px;
+        border-radius: 5px 5px 0 0;
+    }
+    .stats{
+        padding: 0 0 2em;
+        text-align: center;
+        flex-direction: column;
+    }
+    .stat{
+        padding: 1em 0 0;
+    }
+    .stat div{
+        padding: 0;
+    }
+    .attribution{
+        display: none;
     }
 }
