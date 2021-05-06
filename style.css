@@ -26,6 +26,7 @@ body{
 #business_card{
     width: 80vw;
     display: flex;
+    max-width: 1320px;
 }
 .text{
     width: 50%;
@@ -93,7 +94,7 @@ p{
 .attribution a{
     color: hsl(228, 45%, 44%);
 }
-@media only screen and (max-width: 375px){
+@media only screen and (max-width: 720px){
     #business_card{
         flex-direction: column-reverse;
     }
@@ -108,7 +109,6 @@ p{
     .image{
         width: 100%;
         background-position: bottom;
-        background-size: 100% 100%;
         height: 250px;
         border-radius: 5px 5px 0 0;
     }
